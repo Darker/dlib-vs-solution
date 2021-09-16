@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\DlibOptions.xaml" />
+  </ItemGroup>
+
+  <Target Name="DlibSetDefines" BeforeTargets="PreBuildEvent">
+    <ItemGroup>
+      <ClCompile>
+        <PreprocessorDefinitions>DLIB_USE_CUDA=%(DlibCUDAEnabled);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      </ClCompile>
+    </ItemGroup>
+  </Target>
+</Project>
