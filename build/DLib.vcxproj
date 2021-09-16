@@ -59,23 +59,23 @@
     <LinkIncremental>true</LinkIncremental>
     <IntDir>temp\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
-    <OutDir>$(SolutionDir)\..\$(PlatformToolset)\$(Configuration)\$(Platform)</OutDir>
+    <OutDir>$(SolutionDir)\..\$(PlatformToolset)\$(Configuration)\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IntDir>temp\$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(SolutionDir)\..\$(PlatformToolset)\$(Configuration)\$(Platform)</OutDir>
+    <OutDir>$(SolutionDir)\..\$(PlatformToolset)\$(Configuration)\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IntDir>temp\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
-    <OutDir>$(SolutionDir)\..\$(PlatformToolset)\$(Configuration)\$(Platform)</OutDir>
+    <OutDir>$(SolutionDir)\..\$(PlatformToolset)\$(Configuration)\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IntDir>temp\$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(SolutionDir)\..\$(PlatformToolset)\$(Configuration)\$(Platform)</OutDir>
+    <OutDir>$(SolutionDir)\..\$(PlatformToolset)\$(Configuration)\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg">
     <VcpkgEnabled>false</VcpkgEnabled>
