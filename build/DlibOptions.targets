@@ -5,6 +5,7 @@
   </ItemGroup>
 
   <Target Name="DlibSetDefines" BeforeTargets="PreBuildEvent">
+    <Message Text="Setting DLIB_USE_CUDA=%(DlibCUDAEnabled)" />
     <ItemGroup>
       <ClCompile>
         <PreprocessorDefinitions>DLIB_USE_CUDA=%(DlibCUDAEnabled);%(PreprocessorDefinitions)</PreprocessorDefinitions>
