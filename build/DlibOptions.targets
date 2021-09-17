@@ -4,11 +4,11 @@
     <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\DlibOptions.xaml" />
   </ItemGroup>
 
-  <Target Name="DlibSetDefines" BeforeTargets="PreBuildEvent">
-    <Message Text="Setting DLIB_USE_CUDA=%(DlibCUDAEnabled)" />
+  <Target Name="DlibSetDefines" BeforeTargets="BeforeBuild">
+    <Message Text="Setting DLIB_USE_CUDA=%(ClCompile.DlibCUDAEnabled) for %(ClCompile.Identity)" />
     <ItemGroup>
       <ClCompile>
-        <PreprocessorDefinitions>DLIB_USE_CUDA=%(DlibCUDAEnabled);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+        <PreprocessorDefinitions>DLIB_USE_CUDA=%(ClCompile.DlibCUDAEnabled);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       </ClCompile>
     </ItemGroup>
   </Target>
