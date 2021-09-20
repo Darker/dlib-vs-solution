@@ -4,12 +4,27 @@
     <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\DlibOptions.xaml" />
   </ItemGroup>
 
-  <Target Name="DlibSetDefines" BeforeTargets="BeforeBuild">
-    <Message Text="Setting DLIB_USE_CUDA=%(ClCompile.DlibCUDAEnabled) for %(ClCompile.Identity)" />
+  <Target Name="DlibSetDefines" BeforeTargets="PrepareForBuild">
+    <Message Text="Before build" Importance="high"/>
+    <Message Text="CUDA is enabled for %(ClCompile.Identity)" Condition="%(DlibCUDAEnabled)" Importance="high"/>
+    <Message Text="CUDA is disabled for %(ClCompile.Identity)" Condition="!%(DlibCUDAEnabled)" Importance="high"/>
     <ItemGroup>
       <ClCompile>
-        <PreprocessorDefinitions>DLIB_USE_CUDA=%(ClCompile.DlibCUDAEnabled);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+        <PreprocessorDefinitions Condition="%(DlibCUDAEnabled)">DLIB_USE_CUDA=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       </ClCompile>
     </ItemGroup>
-  </Target>
+  </Target><!--
+  <Target Name="Messagebeforebuild" AfterTargets="BeforeBuild">
+      <Message Text="Before build 2" />
+  </Target>-->
+<!--
+  <Target Name="CustomAfterBuild" AfterTargets="Build">
+    <ItemGroup>
+      <_FilesToCopy Include="$(OutputPath)**\*"/>
+    </ItemGroup>
+    <Message Text="_FilesToCopy: @(_FilesToCopy)" Importance="high"/>
+
+    <Message Text="DestFiles:
+        @(_FilesToCopy->'$(_OutputCopyLocation)%(RecursiveDir)%(Filename)%(Extension)')"/>
+  </Target>-->
 </Project>

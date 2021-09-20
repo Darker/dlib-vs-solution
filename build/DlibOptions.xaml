@@ -5,7 +5,7 @@
       <Category Name="dlib" DisplayName="DLib" />
     </Rule.Categories>
     <Rule.DataSource>
-      <DataSource Persistence="ProjectFile" ItemType="" />
+      <DataSource Persistence="UserFile" Label="DLib" ItemType="" /> <!--Persistence="ProjectFile",UserFile ItemType="Compile" ItemType="Reference" -->
     </Rule.DataSource>
     <BoolProperty Name="DlibCUDAEnabled" DisplayName="Use CUDA" Default="false" Category="dlib" IncludeInCommandLine="false"/>
     <StringProperty Name="DlibCUDAPath" DisplayName="CUDA path" Description="Path to the CUDA library" Category="dlib" IncludeInCommandLine="false">
